@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import Paper from '@mui/material/Paper';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <Box>
+    {/* if ( (page !== Notif) &&& (page !== Settings) ){ */}
+      <Button sx={{position: 'fixed', top:0, left:0,}}variant="outlined">Settings</Button>
+      <Button sx={{position: 'fixed', top:0, right:0,}}variant="outlined">Notifications</Button>
+    {/* } */}
+    {/* else{
+      <<Button sx={{position: 'fixed', top:0, left:0,}}variant="outlined">Back</Button>
+    } */}
+      
+      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+        <BottomNavigation showLabels>
+          <BottomNavigationAction label="Home" />
+          <BottomNavigationAction label="Stats" />
+          <BottomNavigationAction label="Friends" />
+        </BottomNavigation>
+      </Paper>
+  </Box>
+);
 }
 
 export default App;
